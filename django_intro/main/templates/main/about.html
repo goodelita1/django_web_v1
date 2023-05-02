@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+about
+{% endblock %}
+
+{% block content %}<form action="/about/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+    {% if res_triangle %}
+    <p>output {{ res_triangle }}</p>
+    {% else %}
+    <p>error</p>
+    {% endif %}
+</form>{% endblock %}
